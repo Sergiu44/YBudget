@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  height: 100dvh;
+}
+
+.btn-primary {
+  @apply bg-violet-500 hover:bg-violet-700 focus:bg-violet-800;
+}
