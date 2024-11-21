@@ -3,7 +3,7 @@ import Input from "../../../../components/Input";
 
 export default function AccessPage() {
   return (
-    <div className="w-[90%] mx-auto -mt-20 -ml-12 z-10 relative">
+    <div className="w-[90%] mx-auto -mt-20 z-10 relative">
       <h2 className="font-bold text-5xl text-center mb-20">
         Connect to your account
       </h2>

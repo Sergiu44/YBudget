@@ -8,7 +8,11 @@ const createRouter = (opts: { isAuth: boolean }) =>
   createBrowserRouter([
     {
       path: "/",
-      element: opts.isAuth ? <DashboardLayout /> : <Navigate to="/auth/join" />,
+      element: opts.isAuth ? (
+        <Navigate to="/dashboard" />
+      ) : (
+        <Navigate to="/auth/join" />
+      ),
     },
     {
       path: "auth",
@@ -23,6 +27,28 @@ const createRouter = (opts: { isAuth: boolean }) =>
           element: <AccessPage />,
         },
       ],
+    },
+    {
+      path: "dashboard",
+      element: <DashboardLayout />,
+      children: [
+        {
+          path: "transactions",
+          element: <TransactionsPage />,
+        },
+        {
+          path: "accounts",
+          element: <AccountsPage />,
+        },
+        {
+          path: "pending",
+          element: <PendingTransactionsPage />,
+        },
+      ],
+    },
+    {
+      path: "settings",
+      element: <SettingsPage />,
     },
   ]);
 
