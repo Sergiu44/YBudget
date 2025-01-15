@@ -1,13 +1,21 @@
-import mongoose from "mongoose";
-import { Transaction } from "../../domain/entities/Transaction";
+import { MongoClient, ServerApiVersion } from "mongodb";
 
 class Database {
-  private constructor() {}
+  public constructor() {}
 
-  public static connect(connectionUri: string | undefined) {
-    if (connectionUri) {
-      mongoose.connect(connectionUri, { dbName: "y-budget" });
+  private static Client: MongoClient | null;
+  public static GetClient(connectionString: string) {
+    if (this.Client === null) {
+      this.Client = new MongoClient(connectionString, {
+        appName: "y-budget",
+        serverApi: {
+          deprecationErrors: true,
+          strict: true,
+          version: ServerApiVersion.v1,
+        },
+      });
     }
+    return this.Client;
   }
 }
 

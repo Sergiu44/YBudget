@@ -1,16 +1,21 @@
 import Express from "express";
-import transactionRoutes from "./routes/transactions";
-import Database from "./infrastructure/db";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
 
-const app = Express();
-dotenv.config({ path: "./.env" });
+import Database from "./infrastructure/db";
+import transactionRoutes from "./routes/transactions";
+import authRoutes from "./auth";
 
-Database.connect(process.env.MONGODB_URI);
+const app = Express();
+dotenv.config({ path: "../.env" });
+
+if (!process.env.MONGODB_URI)
+  throw new Error("Invalid/Missing environment variable: 'MONGODB_URI'");
 
 app.use(bodyParser.json());
+app.set("trust proxy", true);
 
+app.use(authRoutes);
 app.use(transactionRoutes);
 
 app.listen(8000, () => {
