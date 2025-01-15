@@ -17,6 +17,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.set("trust proxy", true);
 
+app.get("/", (req, res) => {
+  res.send("test");
+});
+
 app.use(authRoutes);
 app.use(transactionRoutes);
 
