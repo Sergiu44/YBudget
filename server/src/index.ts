@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import cors from "cors";
 
-import Database from "./infrastructure/db";
 import transactionRoutes from "./routes/transactions";
 import authRoutes from "./auth";
 
@@ -17,7 +16,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.set("trust proxy", true);
 
-app.get("/api", (req, res) => {
+app.get("/api/test", (req, res) => {
   res.send("test");
 });
 
