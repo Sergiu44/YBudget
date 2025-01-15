@@ -1,24 +1,20 @@
 {
     "version": 2,
     "builds": [
-      {
-        "src": "client/next.config.js",
-        "use": "@vercel/next"
-      },
-      {
-        "src": "server/server.js",
-        "use": "@vercel/node"
-      }
+        {
+            "src": "./server/src/index.ts",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "./client/package.json",
+            "use": "@vercel/next"
+        }
     ],
     "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "server/server.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "client/$1"
-      }
-    ]
-  }
-  
+        { "src": "/api/(.*)", "dest": "server/src/index.ts" },
+        { "src": "/(*.)", "dest": ""}
+    ],
+    "env": {
+        "NODE_ENV": "production"
+    }
+}
