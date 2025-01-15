@@ -1,6 +1,7 @@
 import Express from "express";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
+import cors from "cors";
 
 import Database from "./infrastructure/db";
 import transactionRoutes from "./routes/transactions";
@@ -12,6 +13,7 @@ dotenv.config({ path: "../.env" });
 if (!process.env.MONGODB_URI)
   throw new Error("Invalid/Missing environment variable: 'MONGODB_URI'");
 
+app.use(cors());
 app.use(bodyParser.json());
 app.set("trust proxy", true);
 
