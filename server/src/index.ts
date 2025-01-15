@@ -9,8 +9,8 @@ import authRoutes from "./auth.js";
 const app = Express();
 dotenv.config({ path: "../.env" });
 
-if (!process.env.MONGODB_URI)
-  throw new Error("Invalid/Missing environment variable: 'MONGODB_URI'");
+// if (!process.env.MONGODB_URI)
+//   throw new Error("Invalid/Missing environment variable: 'MONGODB_URI'");
 
 app.use(cors());
 app.use(bodyParser.json());
