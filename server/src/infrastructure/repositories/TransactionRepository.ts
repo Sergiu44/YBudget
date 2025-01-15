@@ -1,6 +1,9 @@
 import { ObjectId } from "mongoose";
-import { IRepository } from "../../domain/IRepository";
-import { ITransaction, Transaction } from "../../domain/entities/Transaction";
+import { IRepository } from "../../domain/IRepository.js";
+import {
+  ITransaction,
+  Transaction,
+} from "../../domain/entities/Transaction.js";
 
 export class TransactionRepository implements IRepository<ITransaction> {
   getAllAsync = async () => {

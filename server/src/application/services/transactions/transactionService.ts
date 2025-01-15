@@ -1,8 +1,8 @@
 import {
   ITransaction,
   Transaction,
-} from "../../../domain/entities/Transaction";
-import { TransactionRepository } from "../../../infrastructure/repositories/TransactionRepository";
+} from "../../../domain/entities/Transaction.js";
+import { TransactionRepository } from "../../../infrastructure/repositories/TransactionRepository.js";
 
 export class TransactionService {
   private constructor() {}

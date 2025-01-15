@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { ITransaction } from "../../domain/entities/Transaction";
+import { ITransaction } from "../../domain/entities/Transaction.js";
 
 export class TransactionController {
   public static get(req: Request, res: Response, next: NextFunction) {

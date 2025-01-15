@@ -1,7 +1,8 @@
 import Express from "express";
 import path from "path";
-import { TransactionController } from "../interface/controllers/transactions";
-import { TransactionService } from "../application/services/transactions/transactionService";
+
+import { TransactionController } from "../interface/controllers/transactions.js";
+import { TransactionService } from "../application/services/transactions/transactionService.js";
 
 const filePathname = "/" + path.basename(__filename, ".ts");
 const router = Express.Router();

@@ -3,8 +3,8 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import cors from "cors";
 
-import transactionRoutes from "./routes/transactions";
-import authRoutes from "./auth";
+import transactionRoutes from "./routes/transactions.js";
+import authRoutes from "./auth.js";
 
 const app = Express();
 dotenv.config({ path: "../.env" });

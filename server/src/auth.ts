@@ -2,7 +2,8 @@ import { ExpressAuth } from "@auth/express";
 import Credentials from "@auth/express/providers/credentials";
 import express from "express";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
-import Database from "./infrastructure/db";
+
+import Database from "./infrastructure/db/index.js";
 
 const client = Database.GetClient(process.env.MONGODB_URI!);
 

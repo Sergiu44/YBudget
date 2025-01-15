@@ -1,5 +1,5 @@
 import { ObjectId } from "mongoose";
-import { IEntity } from "./IEntity";
+import { IEntity } from "./IEntity.js";
 
 export interface IRepository<T extends IEntity> {
   getAllAsync: () => Promise<T[]>;
