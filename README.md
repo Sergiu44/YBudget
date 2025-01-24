@@ -1,2 +1,2 @@
-# YBudget2
+# YBudget
 Budget planner - Web Application (Next.js + Express)
