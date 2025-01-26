@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Josefin_Sans, Montserrat } from "next/font/google";
 import "./globals.css";
+import Providers from "./configs/Providers";
 
 const montserrat = Montserrat({
   variable: "--montserrat-font",
@@ -27,11 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${montserrat.variable} ${josefinSans.variable} antialiased`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

@@ -1,19 +1,18 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { Field } from "@/components/ui/field";
 import {
   Heading,
   HStack,
-  Input,
-  Link as Anchor,
   Separator,
+  Input,
   Text,
+  Link as Anchor,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import { FaGoogle } from "react-icons/fa6";
+import { Button } from "@/components/ui/button";
+import { Field } from "@/components/ui/field";
 
-export default function GetStartedPage() {
+export default function LoginPage() {
   return (
     <div className="h-full rounded-xl bg-white/20 px-20 py-10 font-montserrat shadow-xl">
       <Heading textAlign="center" size="3xl" mb={6} color="white">
@@ -81,9 +80,9 @@ export default function GetStartedPage() {
         textAlign="center"
         mt={4}
         as={Link}
-        href="/auth/login"
+        href="/auth/get-started"
       >
-        Already having an account? Log in here
+        Don&apos;t have an account yet? Create here
       </Anchor>
     </div>
   );

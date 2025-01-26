@@ -17,7 +17,7 @@ export default function AuthenticationLayout({ children }: PropsWithChildren) {
 
           <BrandSlogan />
         </div>
-        <div className="col-start-8 col-end-11">{children}</div>
+        <div className="col-start-8 col-end-12">{children}</div>
       </div>
     </div>
   );
