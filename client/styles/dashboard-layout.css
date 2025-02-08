@@ -1,0 +1,14 @@
+.sidebar-dashboard-layout {
+    grid-template-columns: 20px auto;
+    transition: all .7s ease-in-out;
+}
+
+.sidebar-dashboard-layout:has(.siderbar-item-extended) {
+    grid-template-columns: 240px auto;
+    transition: all .7s ease-in-out;
+}
+
+.sidebar-item-extended {
+    max-width: 250px;
+    min-width: 200px;
+}

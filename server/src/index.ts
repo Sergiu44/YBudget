@@ -20,8 +20,8 @@ app.get("/api/test", (req, res) => {
   res.send("test");
 });
 
-// app.use(authRoutes);
-// app.use(transactionRoutes);
+app.use(authRoutes);
+app.use(transactionRoutes);
 
 app.listen(8000, () => {
   console.log("Server started at port 8000");

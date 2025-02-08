@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         montserrat: ["var(--montserrat-font)", ...fontFamily.sans],
         josefinSans: ["var(--josefin-sans-font)", ...fontFamily.sans],
+        roboto: ["var(--roboto-font)", ...fontFamily.sans],
       },
     },
   },

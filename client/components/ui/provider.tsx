@@ -11,6 +11,22 @@ import { buttonRecipe } from "../recipes/button";
 
 const customConfig = defineConfig({
   theme: {
+    semanticTokens: {
+      colors: {
+        backgroundLight: {
+          value: "#F7F7F7",
+        },
+        text: {
+          value: "#434549",
+        },
+        accent: {
+          value: "$8e0bb0",
+        },
+        primary: {
+          value: "#4525a7",
+        },
+      },
+    },
     recipes: {
       button: buttonRecipe,
     },
