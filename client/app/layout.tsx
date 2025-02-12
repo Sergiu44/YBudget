@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Josefin_Sans, Montserrat, Roboto } from "next/font/google";
 import "./globals.css";
+import Providers from "./configs/Providers";
 
 const montserrat = Montserrat({
   variable: "--montserrat-font",
@@ -32,15 +33,14 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-  auth: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        style={{ height: "100vh" }}
+        style={{ height: "100vh", position: "relative" }}
         className={`${montserrat.variable} ${josefinSans.variable} ${roboto.variable} antialiased`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

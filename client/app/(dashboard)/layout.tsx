@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Providers from "../configs/Providers";
 import { Container, Grid, GridItem } from "@chakra-ui/react";
-import SideBarDashboard from "@/components/custom/dashboard-SideBar/SideBarDashboard";
+import SideBarDashboard from "@/components/custom/dashboard/SideBar/SideBarDashboard";
 import "../../styles/dashboard-layout.css";
 
 export const metadata: Metadata = {
@@ -15,15 +14,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Providers>
-      <Grid className="sidebar-dashboard-layout" height="100%">
-        <SideBarDashboard />
-        <GridItem bg="backgroundLight">
-          <Container maxW="11/12" my={12}>
-            {children}
-          </Container>
-        </GridItem>
-      </Grid>
-    </Providers>
+    <Grid className="sidebar-dashboard-layout" height="100%">
+      <SideBarDashboard />
+      <GridItem bg="backgroundLight">
+        <Container maxW="11/12" my={12}>
+          {children}
+        </Container>
+      </GridItem>
+    </Grid>
   );
 }

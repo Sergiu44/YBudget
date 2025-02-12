@@ -1,6 +1,6 @@
 "use client";
 
-import { Link as Anchor, IconProps } from "@chakra-ui/react";
+import { Link as Anchor, IconProps, LinkProps } from "@chakra-ui/react";
 import Link from "next/link";
 import React, { PropsWithChildren, ReactElement } from "react";
 
@@ -8,6 +8,7 @@ interface ISideBarItemProps {
   isActive: boolean;
   href: string;
   icon?: ReactElement<IconProps>;
+  customStyles?: LinkProps;
 }
 
 export default function SideBarItem(
@@ -19,8 +20,9 @@ export default function SideBarItem(
       href={props.href}
       px={3}
       py={1}
-      fontSize="16px"
+      fontSize="14px"
       width="100%"
+      fontWeight="bold"
       display="flex"
       placeItems="center"
       textDecor="none"
@@ -39,12 +41,13 @@ export default function SideBarItem(
         outline: "none",
       }}
       _hover={{
-        color: "primary",
+        color: "primary.500",
         textDecoration: "none",
       }}
       {...(props.isActive && {
-        color: "primary",
+        color: "primary.500",
       })}
+      {...props.customStyles}
     >
       {props.icon} {props.children}
     </Anchor>

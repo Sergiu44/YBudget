@@ -1,5 +1,6 @@
 .get-started__container {
-  background-image: linear-gradient(to left bottom, #c33764, #c32371, #bf0a82, #b50095, #a300ab, #8e0bb0, #7616b4, #581eb8, #4525a7, #342796, #272784, #1d2671);  background-size: 200% 200%;
+  background-image: linear-gradient(to left bottom, #c33764, #c32371, #bf0a82, #b50095, #a300ab, #8e0bb0, #7616b4, #581eb8, #4525a7, #342796, #272784, #1d2671); 
+  background-size: 200% 200%;
   background-position: 0% 50%;
   animation: gradientAnimation 10s ease-in-out infinite;
 }

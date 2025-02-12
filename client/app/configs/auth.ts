@@ -1,4 +1,4 @@
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
 
@@ -6,7 +6,8 @@ const GOOGLE_CLIENT_ID = process.env.AUTH_GOOGLE_ID;
 const GOOGLE_CLIENT_SECRET = process.env.AUTH_GOOGLE_SECRET;
 const SECRET = process.env.SECRET;
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
+export const authOptions: NextAuthConfig = {
+  trustHost: true,
   secret: SECRET,
   session: {
     strategy: "jwt",
@@ -22,8 +23,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: {},
       },
       authorize: async (credentials) => {
-        console.log(credentials);
-        let user = null;
+        const user = null;
+        console.log(user);
 
         // const pwHash = saltAndHashPassword(credentials.password)
         // user = await getUserFromDb(credentials.email, pwHash)
@@ -42,12 +43,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     }),
   ],
   callbacks: {
-    async signIn({ account, profile, credentials }) {
+    async signIn({ profile, credentials }) {
       if (!profile?.email && !credentials) throw new Error("No profile");
       return true;
     },
-    async redirect({ url, baseUrl }) {
+    async redirect({ baseUrl }) {
       return baseUrl;
     },
   },
-});
+};
+export const { handlers, signIn, signOut, auth } = NextAuth(authOptions);
